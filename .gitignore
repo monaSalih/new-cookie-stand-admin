@@ -32,3 +32,5 @@ yarn-error.log*
 
 # vercel
 .vercel
+index1.js.md
+overview.js.md
