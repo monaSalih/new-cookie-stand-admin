@@ -9,8 +9,9 @@ export default function ReportTable(props) {
         <thead className="p-2 bg-green-600 rounded">
           <tr className="">
             <th>location</th>
-            {hours.map((hour) => {
-              return <th className="pl-2 pr-2 text-center">{hour}</th>;
+            
+            {hours.map((hour,index) => {
+              return <th className="pl-2 pr-2 text-center" key={index}>{hour}</th>;
             })}
             <th>Totals</th>
           </tr>
@@ -22,10 +23,10 @@ export default function ReportTable(props) {
             <tr key={`${key}`}>
             <td className="px-2 border-2 border-gray-600 rounded">{item.location}</td>
             
-            {item.hourly_sales.map((item, key) => {
+            {item.hourly_sales.map((item, index) => {
               total_cookie += item
               return (
-                <td className="px-2 border-2 border-gray-600">{item}</td> 
+                <td className="px-2 border-2 border-gray-600" key={index}>{item}</td> 
               )
             })}
             <td className="px-2 border-2 border-gray-600 rounded">{total}</td>
@@ -36,8 +37,8 @@ export default function ReportTable(props) {
         <tfoot>
           <tr>
             <td className="px-2 border-2 border-gray-600">Totals</td>
-            {hours.map((hour, key) => {
-              return <td className="px-2 border-2 border-gray-600">{hour}</td>;
+            {hours.map((hour, index) => {
+              return <td className="px-2 border-2 border-gray-600" key={index}>{hour}</td>;
             })}
             <td className="px-2 border-2 border-gray-600">Totals</td>
           </tr>
